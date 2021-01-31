@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Distancer</string>
+    <string name="human_distance">Human\nDistance</string>
+    <string name="add_location">Add Location</string>
+    <string name="no_location_added_yet">No location added yet</string>
+    <string name="location_options">Location Options</string>
+    <string name="delete">Delete</string>
+    <string name="plot">Plot</string>
+    <string name="title_activity_maps">Map</string>
+</resources>

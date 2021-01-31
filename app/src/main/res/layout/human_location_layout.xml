@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".views.MainActivity">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="135dp"
+        android:layout_marginBottom="10dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="3dp"
+        app:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:id="@+id/root_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp">
+
+
+            <TextView
+                android:id="@+id/start_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:drawablePadding="10dp"
+                android:fontFamily="@font/poppins_regular"
+                android:textColor="@color/colorAccent"
+                android:textSize="14sp"
+                app:drawableStartCompat="@drawable/green_status"
+                tools:text="76 Shola Bus stop, Idumota Lagos, Nigeria" />
+
+            <TextView
+                android:id="@+id/end_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/start_location"
+                android:layout_alignStart="@id/start_location"
+                android:layout_marginTop="10dp"
+                android:drawablePadding="10dp"
+                android:fontFamily="@font/poppins_regular"
+                android:textColor="@color/colorAccent"
+                android:textSize="14sp"
+                app:drawableStartCompat="@drawable/red_status"
+                tools:text="26 Muritala Mohammad Way, Ikeja" />
+
+            <TextView
+                android:id="@+id/create_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/end_location"
+                android:layout_alignStart="@id/end_location"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins_regular"
+                android:textColor="@color/colorAccent"
+                android:textSize="12sp"
+                tools:text="24th May, 2019. 10:34:15pm" />
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</layout>

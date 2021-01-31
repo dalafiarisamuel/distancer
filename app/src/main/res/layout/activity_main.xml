@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".views.MainActivity">
+
+    <data>
+
+        <variable
+            name="activity"
+            type="ng.sam.distancer.views.MainActivity" />
+
+        <import type="android.view.View" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorActivityWhiteBackground">
+
+        <LinearLayout
+            android:id="@+id/title_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="21dp"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/navigationView"
+                layout="@layout/top_navigation_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/location_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title_layout"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="21dp"
+            android:overScrollMode="never"
+            android:visibility="gone"
+            tools:itemCount="15"
+            tools:listitem="@layout/human_location_layout" />
+
+        <LinearLayout
+            android:id="@+id/no_result_display"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/title_layout"
+            android:layout_gravity="center"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="-60dp"
+            android:layout_marginEnd="21dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/no_item_circle_shape" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        app:srcCompat="@drawable/ic_round_location_on"
+                        app:tint="@color/colorActivityWhiteBackground" />
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:text="@string/no_location_added_yet"
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/add_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="35dp"
+            android:background="@color/colorAccent"
+            android:backgroundTint="@color/colorAccent"
+            android:contentDescription="@string/add_location"
+            android:onClick="@{() -> activity.addLocation()}"
+            app:backgroundTint="@color/colorAccent"
+            app:srcCompat="@drawable/ic_round_add_location_alt"
+            app:tint="@color/colorActivityWhiteBackground" />
+
+    </RelativeLayout>
+
+
+</layout>
